@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <ModMetadata>
-    <name>BetterSliders</name>
-    <author>SirRandoo</author>
+    <name>BetterSliders (fixed)</name>
+    <author>Linnun</author>
     <description>Entry fields for all your sliders!</description>
-    <url>https://github.com/sirrandoo/better-sliders</url>
 
-    <packageId>sirrandoo.bettersliders</packageId>
+    <packageId>Linnun.bettersliders</packageId>
     <supportedVersions>
         <li>1.1</li>
         <li>1.2</li>

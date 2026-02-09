@@ -49,6 +49,8 @@ public static class ExpandedSliderHorizontal
     [SuppressMessage("ReSharper", "RedundantAssignment")]
     private static void Prefix(ref Rect rect, float value, [NotNull] ref NumberEntryController __state)
     {
+        if (Find.WindowStack.currentlyDrawnWindow == null) return; // fix error by disabling this mod for sliders in gizmos
+
         __state = SliderController.ControllerForPosition(rect);
         __state.SetStateIfNull(value);
 
@@ -67,6 +69,8 @@ public static class ExpandedSliderHorizontal
 
     private static void Postfix(Rect rect, ref float __result, float roundTo, [NotNull] ref NumberEntryController __state)
     {
+        if (Find.WindowStack.currentlyDrawnWindow == null) return; // fix error by disabling this mod for sliders in gizmos
+
         GameFont cache = Text.Font;
         Text.Font = GameFont.Tiny;
 

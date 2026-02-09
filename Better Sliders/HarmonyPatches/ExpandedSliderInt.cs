@@ -45,6 +45,8 @@ public static class ExpandedSliderInt
     [SuppressMessage("ReSharper", "RedundantAssignment")]
     private static void Prefix(ref Rect rect, IntRange range, [NotNull] ref NumberEntryController __state)
     {
+        if (Find.WindowStack.currentlyDrawnWindow == null) return; // fix error by disabling this mod for sliders in gizmos
+
         __state = SliderController.ControllerForPosition(rect);
         __state.SetStateIfNull(range.min, range.max);
 
@@ -68,6 +70,8 @@ public static class ExpandedSliderInt
 
     private static void Postfix(Rect rect, ref IntRange range, int min, int max, [NotNull] ref NumberEntryController __state)
     {
+        if (Find.WindowStack.currentlyDrawnWindow == null) return; // fix error by disabling this mod for sliders in gizmos
+
         GameFont cache = Text.Font;
         Text.Font = GameFont.Tiny;
 
